@@ -81,7 +81,7 @@
 |car_name|string|Y|汽车名称|
 |min|double|N|汽车最低价|
 |max|double|N|汽车最高价|
-|car_year|json对象|汽车的具体车型,具体字段类型参考返回示例|
+|car_year|json对象|Y|汽车的具体车型,具体字段类型参考返回示例|
 
 
 ```
