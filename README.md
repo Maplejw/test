@@ -1,15 +1,26 @@
 # API DOC
-本文档主要描述web的接口数据获取,所有返回的数据格式为json格式
+本文档主要描述web的接口数据获取,所有返回的数据格式为json格式.域名待定,
 
 ## 通用的返回数据格式
+描述了所有的接口的通用返回数据格式，其中data字段里的数据为各个接口业务所特有的，由各个接口进行规定描述.
+
+其中code=0的时候，即代表接口请求成功，然后接口所请求的数据，都在data字段，这个时候无message字段
+
+但code!=0的时候，即代表请求失败，这个时候无data字段，message字段为请求失败的原因。
+|字段|类型|是否必传|描述|  
+|------|---|---|---|
+|code|int|Y|返回的code码|
+|data|json数组|N|json数组的字符串,各个接口拥有自己的字段|
+|message|string|N|当code!=0的时候，返回的错误消息提示|
+
 
 ## 1.获取首页品牌数据
-其中data的字段如下
+请求url: /car/get_brand
 
-| 字段|类型|是否必传|描述 | 
+请求参数：无
 
-| event|String|Y|tag_browse |
-|tag_id|String|Y|标签ID|
-|time|int|Y|浏览时长,单位秒|
-|templates|int|Y|浏览模板数量|
-| timestamp |int|Y|13位的unix时间戳-精确到毫秒 | 
+返回参数:
+|字段|类型|是否必传|描述|  
+|------|---|---|---|
+|brand|string|Y|汽车品牌名称|
+|logo|string|Y|汽车品牌logo图片|
