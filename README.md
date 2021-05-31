@@ -39,7 +39,7 @@
 ```
 
 
-## 2.获取品牌下的汽车数据
+## 2.获取某品牌下的汽车
 请求url: /car/get_brand_car
 
 请求参数：
@@ -63,5 +63,45 @@
 	    {"id":1,"car_name":"x1","pic":"/img/a.jpg","min":20.11,"max":99.99},
 		{"id":2,"car_name":"x3","pic":"/img/b.jpg","min":21.11,"max":99.99}
 	]
+}
+```
+
+## 3.获取汽车的详细数据
+请求url: /car/get_car
+
+请求参数：
+|字段|类型|是否必传|描述|  
+|------|---|---|---|
+|id|int|Y|汽车ID|
+
+返回参数:
+|字段|类型|是否必传|描述|  
+|------|---|---|---|
+|pic_list|json数组|Y|汽车的轮播图片，有多张|
+|car_name|string|Y|汽车名称|
+|min|double|N|汽车最低价|
+|max|double|N|汽车最高价|
+|car_year|json对象|汽车的具体车型,具体字段类型参考返回示例|
+
+
+```
+{
+    "code" : 0,
+	"data": {
+             "pic_list":["a.jpg","b.jpg"],
+             "car_name":"x1",
+             "min": 20.11,
+             "max": 99.99,
+             "car_year" : {
+                "2021": [
+                    {"min":10.11,"promotion":2,"car_model":"运动版","is_sale":1},
+                    {"min":11.11,"promotion":1,"car_model":"豪华版","is_sale":1}
+                 ],
+                "2020": [
+                    {"min":8.11,"promotion":2,"car_model":"运动版","is_sale":1},
+                    {"min":9.11,"promotion":1,"car_model":"豪华版","is_sale":1}
+                 ]
+             }
+         }
 }
 ```
