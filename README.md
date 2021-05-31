@@ -28,6 +28,16 @@
 |id|int|Y|汽车品牌ID|
 |brand|string|Y|汽车品牌名称|
 |logo|string|Y|汽车品牌logo图片|
+```
+{
+    "code" : 0,
+	  "data": [
+	      {"id":1,"brand":"bmw","logo":"/img/a.jpg"},
+		    {"id":2,"brand":"toyota","logo":"/img/b.jpg"}
+	   ]
+}
+```
+
 
 ## 2.获取品牌下的汽车数据
 请求url: /car/get_brand_car
@@ -41,5 +51,17 @@
 |字段|类型|是否必传|描述|  
 |------|---|---|---|
 |id|int|Y|汽车ID|
-|price|string|Y|汽车名称|
+|car_name|string|Y|汽车名称|
 |pic|string|Y|汽车图片|
+|min|double|N|汽车最低价|
+|max|double|N|汽车最高价|
+
+```
+{
+    "code" : 0,
+	"data": [
+	    {"id":1,"car_name":"x1","pic":"/img/a.jpg","min":20.11,"max":99.99},
+		{"id":2,"car_name":"x3","pic":"/img/b.jpg","min":21.11,"max":99.99}
+	]
+}
+```
