@@ -18,7 +18,7 @@
 
 
 ## 1.获取首页品牌数据
-请求url: /car/get_brand
+请求url: /index/car/get_brand
 
 请求参数：无
 
@@ -40,7 +40,7 @@
 
 
 ## 2.获取某品牌下的汽车
-请求url: /car/get_brand_car
+请求url: /index/car/get_brand_car
 
 请求参数：
 |字段|类型|是否必传|描述|  
@@ -67,7 +67,7 @@
 ```
 
 ## 3.获取汽车的详细数据
-请求url: /car/get_car
+请求url: /index/car/get_car
 
 请求参数：
 |字段|类型|是否必传|描述|  
